@@ -1,0 +1,192 @@
+/****************************************
+/******* MINIMAL THEME ******************
+/****************************************
+
+/* Text Colors
+------------------------------------------------------- */
+body,
+#nav ul li a,
+#nav_sub ul li a,
+#supplemental_details p a,
+#footer a  {
+	color: #555555;
+}
+
+
+/* Main Images
+------------------------------------------------------- */
+
+body { 
+	background: #f3f3f3 url(images/minimal/background.png) repeat center top;
+}
+#site_info_wrap { background: #e3e3e3 url(images/minimal/background_dark_gray.png) repeat center top; }
+#page_wrapper_outer { background: transparent url(images/minimal/page_wrapper_top.jpg) repeat-x 0 0; }
+#header h1#branding a {}
+.current_page_item { background: #e3e3e3 url(images/minimal/background_dark_gray.png) repeat center top; }
+.comments ul li .comment_wrap .comment { background: transparent url(images/minimal/comment_body_repeat-y.png) repeat-y 0 0; }
+#site_map {	background: transparent url(images/minimal/divider.png) repeat-x 0 100%; }
+#legal { background: transparent url(images/minimal/divider.png) repeat-x left bottom; }
+
+
+
+
+/* Main Sprite */
+#site_info span.location span.icon,
+#site_info span.time span.icon,
+.comments input[type="submit"].submitcomment,
+.navi a,
+#downloadlatestsermon,
+#followusontwitter,
+a.readall,
+a.readmore,
+a.viewall,
+a.viewmore,
+a.download,
+#supplemental_details p a.emailupdates span.icon,
+#supplemental_details p a.inviteafriend span.icon {
+	background-color: transparent;
+	background-repeat: no-repeat;
+	 background-image: url("images/minimal/misc-sprite.png");
+}
+	#site_info span.location span.icon { background-position: 0 0; }
+	#site_info span.time span.icon { background-position: -25px 0; }
+	.comments input[type="submit"].submitcomment { background-position: -720px -25px; }
+	.navi a { background-position: -74px 0; background-color: #FFF; }
+	#downloadlatestsermon { background-position: -100px 0; }
+	#followusontwitter { background-position: -325px 0; }
+	#supplemental_details p a.emailupdates span.icon { background-position: -215px -41px; }
+	#supplemental_details p a.inviteafriend span.icon { background-position: -243px -41px; }
+
+
+
+
+/* Form Sprite */
+.comments ul li .comment_wrap,
+.comments ul li .comment_bottom,
+.comments ul li.admin .comment_wrap .comment .avatar,
+#section_main .page_content p.field_text, p.comment-form-author, p.comment-form-email, p.comment-form-url, p.comment-form-comment,
+div.field_message,
+#search p.text_field, #search_widget p.text_field,
+#search input[type="submit"], #search_widget input[type="submit"] {
+	background-image: url(images/minimal/form-sprite.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+}
+	.comments ul li .comment_wrap { background-position: 0 0; }
+	.comments ul li .comment_bottom { background-position: 0 -89px; }
+	.comments ul li.admin .comment_wrap .comment .avatar { background-position: -19px -137px; }
+	#section_main .page_content p.field_text,  p.comment-form-author { background-position: 0 -240px; }
+	div.field_message, p.comment-form-comment { background-position: -240px -240px; }
+	#search p.text_field, #search_widget p.text_field { background-position: 0 -360px; }
+	#search input[type="submit"], #search_widget input[type="submit"] { background-position: -185px -360px; }
+
+	#nav > .menu-header >  ul > li > a:hover, #nav > .home-button >  ul > li > a:hover  {
+			background-color:#f5f5f5;
+	}
+
+
+/*drop down */
+		#nav > .menu-header > ul > li > ul > li > a{
+			color:#494949;
+			text-decoration:none;
+			display: block;
+			width: 15em;
+			padding: .8em 1em;
+			border-bottom: 1px solid #ededed;
+			background: #FFFFFF;
+		}
+		#nav > .menu-header > ul > li > ul li a{
+			color:#494949;
+			text-decoration:none;
+			width: 15em;
+			padding: .8em 1em;
+			border-bottom: 1px solid #ededed;
+			background: #FFFFFF;
+		}
+
+		#nav > .menu-header > ul > li > ul > li a:hover{
+			background: #f2f2f2;
+		}
+
+		#nav > .menu-header > ul > li > ul > li > a:hover{
+			background-color: #f2f2f2;
+			opacity: 1;
+		} 
+		
+
+/* Aside Modules
+------------------------------------------------------- */
+
+
+.aside .module {
+	width: 220px;
+	float: left;
+	margin: 20px 0 0 0;
+}
+
+
+	.aside h3 {
+		background-color: #e1e1e1;
+		float: left;
+		width: 180px;
+		padding: 10px 20px;
+		border-bottom: 1px solid #d2d2d2;
+		font-size: 18px;
+		text-shadow: #FFF 0px 1px 1px;
+		font-weight: 500;
+		float: left;
+		font-family: "MuseoSans500";
+	}
+		
+	
+	/* content */
+	
+	/* content below sidebar title in sidebar */
+	.aside div {
+		background-color: #f1f1f1;
+		border-top: 1px solid #FFF;
+		float: left;
+		width: 180px;
+		padding: 10px 20px;
+		font-size: 12px;
+		font-family: "Helvetica Neue", Helvetica, Geneva, Arial, Verdana, sans-serif;
+		line-height: 18px;
+		text-shadow: #FFF 0px 1px 1px;
+		margin-bottom:20px;
+	}
+	/* Lists in sidebar */
+	.aside  ul  ul {
+		background-color: #f1f1f1;
+		border-top: 1px solid #FFF;
+		float: left;
+		width: 203px;
+		font-size: 12px;
+		font-family: "Helvetica Neue", Helvetica, Geneva, Arial, Verdana, sans-serif;
+		line-height: 18px;
+		text-shadow: #FFF 0px 1px 1px;
+		margin-bottom:20px;
+	}
+	.aside  ul ul ul {
+		width: 163px;
+	}
+	
+		.aside .content h2 {
+			font-size: 18px;
+			font-weight: 400;
+		}
+		
+		.aside .content h4 {
+			font-size: 12px;
+			font-weight: 400;
+			margin-bottom: 10px;
+		}
+		
+		.aside p { line-height: 18px; margin-bottom: 10px; }
+		
+		.aside a.download { float: right; }
+		
+
+
+
+
+
