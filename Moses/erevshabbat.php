@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Sermons Custom
+Template Name:  ErevShabbat Custom
 */
 
 
@@ -8,7 +8,7 @@ get_header() ?>
 			
 
 	<!-- Page --> 
-<?php error_log("ENTERED sermons.php"); ?>	
+<?php error_log("ENTERED erevshabbat.php"); ?>	
 	<div id="page_wrapper_outer"> 
 		<div id="page_wrapper"> 
 			<div id="page"> 
@@ -50,9 +50,9 @@ get_header() ?>
 							<tbody> 
                 <?php 
    				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; 
-                                error_log("Getting posts for sermons ONLY in Moses theme/sermons.php");
+                                error_log("Getting posts for  ONLY erev shabbat messages  in Moses theme/erevshabbat.php");
 				$args = array('paged' => $paged, 'post_type' => 'cpt_sermons',
-                                        'sermon_cat' => 'shabbatsermon'
+                                        'sermon_cat' => 'erevshabbatmsg'
                                         );
 				query_posts($args);		
 				?>

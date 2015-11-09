@@ -66,7 +66,7 @@ if (constant('MULTISITE') == 1) {global $multisite; $multisite = true;};
 ?>
 </head>
 
-<body <?php body_class($class); ?>> 
+<body <?php body_class(); ?>> 
 
 	<!-- Site Info --> 
     <?php if (get_option("cap_address") != "" && get_option("cap_address") != "Address"){
@@ -105,7 +105,16 @@ if (constant('MULTISITE') == 1) {global $multisite; $multisite = true;};
 			}
 			?>
 			</a></h1> 
-			<h2><?php if (get_bloginfo( 'description' ) != ""){?><?php bloginfo( 'description' ); ?><?php } ?></h2>
+<?php error_log("description type is "); 
+      error_log(gettype(get_bloginfo('description'))); 
+      error_log(get_bloginfo('description'));
+      error_log("or...");
+      $bidesc=get_bloginfo('description');
+      error_log("test: " . $bidesc); ?> 
+		<!--	<h2><?php if (get_bloginfo( 'description' ) != ""){?><?php bloginfo( 'description' ); ?><?php } ?></h2>--> 
+<h2>
+<div style="bhcbemotto"><span style="font-weight: bold;">Be</span> Inspired. <span style="font-weight: bold;">Be</span> Connected. <span style="font-weight: bold;">Be</span>long.</div>
+</h2>
 						
 			<div id="nav"> 
             <div class="home-button">

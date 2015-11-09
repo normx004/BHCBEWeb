@@ -1,10 +1,10 @@
 <?php
 /*
-Template Name: News
+Template Name: Sermons Custom
 */
 
 
-get_header(); ?>
+get_header() ?>
 			
 
 	<!-- Page --> 
@@ -15,7 +15,13 @@ get_header(); ?>
 				
 				<div id="section_main" class="inner_page"> 
 					
-					<h1 class="two_col"><?php the_title(); ?></h1>
+					<?php 
+					$podcast_url = get_page_by_title('Podcast Page - Mint Themes');
+					$podcast_url = $podcast_url->guid;
+                    $podcast_url = str_replace("http", "itpc", $podcast_url )
+                    ?>
+					<h1 class="two_col"><?php the_title(); ?>
+                                       // <a href="<?php echo $podcast_url; ?>" class="podcast">Subscribe to Podcast</a></h1>
 					
                     <?php
 					$category_description = category_description();
@@ -25,7 +31,7 @@ get_header(); ?>
 				
 					?>
                 
-					<div class="hr"><hr /></div> 
+					
 					
 					<div id="nav_sub">                         
                         <?php get_sidebar(); ?>
@@ -35,38 +41,44 @@ get_header(); ?>
                    <table id="bloglist"> 
 							<thead> 
 								<tr> 
-									<th scope="col" class="posted_on">Posted On</th> 
+									<th scope="col" class="posted_on">Date Posted</th> 
 									<th scope="col" class="title">Title</th> 
 									<th scope="col" class="excerpt">Excerpt</th> 
-									<th scope="col" class="replys">Replys</th> 
+                                    
 								</tr> 
 							</thead> 
 							<tbody> 
-							<?php
-								$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-								$args = array('paged' => $paged, 'post_type' => 'cpt_news');
-								query_posts($args);		
-                            ?>
-                           
-                            <?php if (have_posts()) : ?>
-                            <?php while (have_posts()) : the_post(); ?>
+                <?php 
+   				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; 
+				$args = array('paged' => $paged, 'post_type' => 'cpt_sermons');
+				query_posts($args);		
+				?>
+         	   
+      	    	<?php if (have_posts()) : ?>
+      	      	<?php while (have_posts()) : the_post(); ?>
+                               
+                <script type="text/javascript">
+                <!--
+                function sermonPopup<?php echo $post->ID; ?>() {
+                window.open( "<?php echo get_template_directory_uri();?>/includes/sermon-popup/?mp3=<?php echo get_post_meta($post->ID, 'sermonmp3', true) ?>&ogg=<?php echo get_post_meta($post->ID, 'sermonogg', true)?>&title=<?php echo get_the_title(); ?>", "myWindow", 
+                "status = 1, height = 116, width = 422, resizable = 0" )
+                }
+                //-->
+                </script>
+                    
                                 <tr> 
-                                        <td class="posted_on"><?php the_time('F j, Y'); ?></td> 
+                                        <td class="posted_on"><?php the_time('M j, Y'); ?></td> 
                                         <td class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></td> 
-                                        <td class="excerpt"><?php echo (strip_tags(trim(get_the_excerpt()))); ?></td> 
-                                        <td class="replys"><?php comments_number('0','1','%'); ?></td> 
+                                        <td class="excerpt"><?php echo (strip_tags(trim(get_the_excerpt()))); ?></td>
+                                        //<td class="excerpt"><a onClick="sermonPopup<?php echo $post->ID; ?>()" href="">Listen</a></td> 
+                                      // <td class="replys"><a href="<?php if (get_option("cap_mp3_php") == "true"){?><?php echo get_template_directory_uri();?>/includes/mp3.php?file=<?php echo get_post_meta($post->ID, 'sermonmp3', true); ?>&fname=<?php echo get_the_title(); ?><?php } else { echo get_post_meta($post->ID, 'sermonmp3', true); } ?>" target="_blank">Download</a></td> 
                                 </tr> 
-                                
                     <?php endwhile; // end of the loop. ?>
-                    
-                    
                     <?php endif; ?>
-                    
-                   
                     
 							</tbody> 
 						</table> 
-					<?php if ( $wp_query->max_num_pages > 1 ) : ?>
+ 					<?php if ( $wp_query->max_num_pages > 1 ) : ?>
 					<?php 
                     $nextposts = get_next_posts_link( __( '&larr; Older posts', 'faded' ) ); 
                     $prevposts = get_previous_posts_link( __( 'Newer posts &rarr;', 'faded' ) ); 
@@ -88,6 +100,8 @@ get_header(); ?>
                         </div>
                     
             		<?php endif; ?>
+                    
+											
 											
 					</div> <!-- end .page_content.full --> 
                   

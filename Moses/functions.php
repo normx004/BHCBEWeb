@@ -219,13 +219,25 @@ function churchthemer_filter_wp_title( $title, $separator ) {
 	// Otherwise, let's start by adding the site name to the end:
 	$title .= get_bloginfo( 'name', 'display' );
 
-	// If we have a site description and we're on the home/front page, add the description:
+	// If we have a site description and we're on the home/front page, add the description:ug-2013
 	$site_description = get_bloginfo( 'description', 'display' );
 	if ( $site_description && ( is_home() || is_front_page() ) )
 		$title .= " $separator " . $site_description;
 
+	if ( isset($page)) { 
+		error_log("the page variable is SET");
+                error_log(gettype($page));
+	} else {
+		error_log("the page variable is NOT set around 228 of functions.php");
+	}
+	$pagestr = gettype($page);
+	if ( strcmp($pagestr,"object") == 0) {
+		$pageval = 0;
+	} else {
+		$pageval = $page;
+	}
 	// Add a page number if necessary:
-	if ( $paged >= 2 || $page >= 2 )
+	if ( $paged >= 2 || $pageval >= 2 )
 		$title .= " $separator " . sprintf( __( 'Page %s', 'churchthemer' ), max( $paged, $page ) );
 
 	// Return the new title to wp_title():
@@ -295,6 +307,7 @@ add_filter( 'excerpt_more', 'churchthemer_auto_excerpt_more' );
  * @return string Excerpt with a pretty "Continue Reading" link
  */
 function churchthemer_custom_excerpt_more( $output ) {
+        error_log("in functions.php: churchthemer_custom_excerpt_more");
 	if ( has_excerpt() && ! is_attachment() ) {
 		$output .= churchthemer_continue_reading_link();
 	}
@@ -487,8 +500,10 @@ function widget_latest_sermon() {
 							 'showposts' => 1);
 							 $the__sermons_query = new WP_Query($argssidebar);	
 							 $sermonposts = get_posts($argssidebar);
+                                                         error_log("about to get posts in widget-lastest-sermon");
 							 foreach($sermonposts as $post) : ?>
                              	<?php 
+                                                         error_log("getting latest sermon in functions.php widget-latest-sermon func");
 								$the_id = get_the_ID(); 
 								$table_name = $table_prefix . "posts";
 								$theexcerpt = $wpdb->get_var($wpdb->prepare("SELECT post_content FROM $table_name WHERE ID = '%d';", $the_id));
@@ -529,11 +544,11 @@ function widget_search() {
 
 
 
-register_sidebar_widget(__('Latest Sermon Widget', 'churchthemer'), 'widget_latest_sermon', null, 'latest_sermon');
-unregister_widget_control('latest_sermon');
+wp_register_sidebar_widget(__('Latest Sermon Widget', 'churchthemer'), 'widget_latest_sermon', null, 'latest_sermon');
+wp_unregister_widget_control('latest_sermon');
 
-register_sidebar_widget(__('Church Theme Search Widget', 'churchthemer'), 'widget_search', null, 'searchwidget');
-unregister_widget_control('searchwidget');
+wp_register_sidebar_widget(__('Church Theme Search Widget', 'churchthemer'), 'widget_search', null, 'searchwidget');
+wp_unregister_widget_control('searchwidget');
 
 //Get current Page name:
 function curPageName() {
@@ -592,6 +607,24 @@ function colorbox_front (){
 	}
 }        
 add_action('wp_head', 'colorbox_front');
+
+/**
+ * sermon cat taxonomies
+ */
+ function sermon_cat_taxonomy() {  
+   register_taxonomy(  
+    'sermon_cat',  
+    'cpt_sermons',  
+    array(  
+        'hierarchical' => true,  
+        'label' => 'Sermon Categories',  
+        'query_var' => true,  
+		'with_front' => false, 
+        'rewrite' => array('slug' => 'sermons')  
+    )  
+);  
+}  
+add_action( 'init', 'sermon_cat_taxonomy' ); 
 
 
 //Header Scripts and JQuery
@@ -741,20 +774,3 @@ $wpdb->update( $wpdb->posts, array('post_type' => 'cpt_events'), array('post_typ
 $wpdb->update( $wpdb->posts, array('post_type' => 'cpt_sermons'), array('post_type' => 'sermons'));
 $wpdb->update( $wpdb->posts, array('post_type' => 'cpt_photoalbums'), array('post_type' => 'photoalbums'));
 
-/**
- * Sermon Cat taxonomies
- */
-function sermon_cat_taxonomy() {  
-   register_taxonomy(  
-    'sermon_cat',  
-    'cpt_sermons',  
-    array(  
-        'hierarchical' => true,  
-        'label' => 'Sermon Categories',  
-        'query_var' => true,  
-		'with_front' => false, 
-        'rewrite' => array('slug' => 'sermons')  
-    )  
-);  
-}  
-add_action( 'init', 'sermon_cat_taxonomy' );  

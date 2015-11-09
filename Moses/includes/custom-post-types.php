@@ -160,7 +160,7 @@ function sermon_posttype() {
 				'not_found_in_trash' => __( 'No sermons found in trash' )
 			),
 			'public' => true,
-			'supports' => array( 'title', 'editor', 'thumbnail'),
+			'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt'),
 			'capability_type' => 'post',
 			'rewrite' => array("slug" => "cpt_sermons"), // Permalinks format
 			'menu_icon' => get_bloginfo('stylesheet_directory') . '/css/images/cpt_sermons.png',  // Icon Path

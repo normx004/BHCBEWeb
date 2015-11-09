@@ -74,7 +74,7 @@ get_header(); ?>
 									<th scope="col" class="posted_on">Posted On</th> 
 									<th scope="col" class="title">Title</th> 
 									<th scope="col" class="excerpt">Excerpt</th> 
-									<th scope="col" class="replys">Replies</th> 
+									<th scope="col" class="replys">Replys</th> 
 								</tr> 
 							</thead> 
 							<tbody> 

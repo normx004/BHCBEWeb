@@ -18,8 +18,8 @@ get_header();
 $imagedir = get_bloginfo( 'template_url' );
 ?>
 
-
-
+<?php error_log("ENTERED index.php in Moses theme directory"); ?>
+<?php $multisite=false; ?>
 <!-- Page --> 
 	
 	<div id="page_wrapper_outer"> 
@@ -31,46 +31,109 @@ $imagedir = get_bloginfo( 'template_url' );
 					<div class="scrollable">   
 					   
 				   
-					   		<?php
+	<?php
 							// array of 6 sliders for the homepage
-							$sliders = array(
-								'first' => array(
-									'title' => reverse_escape(get_option('cap_slider_title1')),
-									'text' => reverse_escape(get_option('cap_slider_text1')),
-									'image' => reverse_escape(get_option('cap_slider_image1')),
-									'link' => reverse_escape(get_option('cap_slider_link1'))
-								),
-								'second' => array(
-									'title' => reverse_escape(get_option('cap_slider_title2')),
-									'text' => reverse_escape(get_option('cap_slider_text2')),
-									'image' => reverse_escape(get_option('cap_slider_image2')),
-									'link' => reverse_escape(get_option('cap_slider_link2'))
-								),
-								'third' => array(
-									'title' => reverse_escape(get_option('cap_slider_title3')),
-									'text' => reverse_escape(get_option('cap_slider_text3')),
-									'image' => reverse_escape(get_option('cap_slider_image3')),
-									'link' => reverse_escape(get_option('cap_slider_link3'))
-								),
-								'fourth' => array(
-									'title' => reverse_escape(get_option('cap_slider_title4')),
-									'text' => reverse_escape(get_option('cap_slider_text4')),
-									'image' => reverse_escape(get_option('cap_slider_image4')),
-									'link' => reverse_escape(get_option('cap_slider_link4'))
-								),
-								'fifth' => array(
-									'title' => reverse_escape(get_option('cap_slider_title5')),
-									'text' => reverse_escape(get_option('cap_slider_text5')),
-									'image' => reverse_escape(get_option('cap_slider_image5')),
-									'link' => reverse_escape(get_option('cap_slider_link5'))
-								),
-								'sixth' => array(
-									'title' => reverse_escape(get_option('cap_slider_title6')),
-									'text' => reverse_escape(get_option('cap_slider_text6')),
-									'image' => reverse_escape(get_option('cap_slider_image6')),
-									'link' => reverse_escape(get_option('cap_slider_link6'))
-								)
-							);
+							
+ $ptrx = array(1,2,3,4,5,6);						
+
+ $ok = is_readable('sliderorder');
+
+ if ($ok) {
+    $ptrx = file ( 'sliderorder' , FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+ }
+
+  // clean up comment lines (lines that start with '#')
+  $ptry = array (1,2,3,4,5,6);
+  $ix = 0;
+  $iy = 0;
+  $size = count($ptrx);
+//  echo ("size of ptrx is $size\n");
+  while ($ix < 6 && $iy < ($size+1)) {
+  	$val = substr($ptrx[$iy],0,1);
+ // 	echo ("when iy = $iy, Val is $val\n");
+  	if (strcmp($val,"#") != 0) {
+  		 $ptry[$ix] = $ptrx[$iy];
+  		 $ix += 1;
+  //		 echo ("ix=$ix, iy=$iy ptry[ix] = $ptry[$ix]\n");
+  	} else {
+  //		echo ("comment:  $ptrx[$iy]\n");
+  	}
+  	$iy += 1;
+  }
+  $ptrx = $ptry;
+  //echo ("ptrx is at end  $ptrx[0] $ptrx[1] $ptrx[2] $ptrx[3] $ptrx[4] $ptrx[5] \n");
+  
+
+  // there is probably a more elegant way to do this.... 
+  $csti1="cap_slider_title" . $ptrx[0];
+  $cste1="cap_slider_text"  . $ptrx[0];
+  $csi1 ="cap_slider_image" . $ptrx[0];
+  $csl1 ="cap_slider_link"  . $ptrx[0];
+  
+  $csti2="cap_slider_title" . $ptrx[1];
+  $cste2="cap_slider_text"  . $ptrx[1];
+  $csi2 ="cap_slider_image" . $ptrx[1];
+  $csl2 ="cap_slider_link"  . $ptrx[1];
+  
+  $csti3="cap_slider_title" . $ptrx[2];
+  $cste3="cap_slider_text"  . $ptrx[2];
+  $csi3 ="cap_slider_image" . $ptrx[2];
+  $csl3 ="cap_slider_link"  . $ptrx[2];
+
+  
+  $csti4="cap_slider_title" . $ptrx[3];
+  $cste4="cap_slider_text"  . $ptrx[3];
+  $csi4 ="cap_slider_image" . $ptrx[3];
+  $csl4 ="cap_slider_link"  . $ptrx[3];
+  
+  $csti5="cap_slider_title" . $ptrx[4];
+  $cste5="cap_slider_text"  . $ptrx[4];
+  $csi5 ="cap_slider_image" . $ptrx[4];
+  $csl5 ="cap_slider_link"  . $ptrx[4];
+  
+  $csti6="cap_slider_title" . $ptrx[5];
+  $cste6="cap_slider_text"  . $ptrx[5];
+  $csi6 ="cap_slider_image" . $ptrx[5];
+  $csl6 ="cap_slider_link"  . $ptrx[5];
+  
+  $sliders = array(
+                                                                'first' => array(
+                                                                        'title' => reverse_escape(get_option($csti1)),
+                                                                        'text' => reverse_escape(get_option($cste1)),
+                                                                        'image' => reverse_escape(get_option($csi1)),
+                                                                        'link' => reverse_escape(get_option($csl1))
+                                                                ),
+                                                                'second' => array(
+                                                                        'title' => reverse_escape(get_option($csti2)),
+                                                                        'text' => reverse_escape(get_option($cste2)),
+                                                                        'image' => reverse_escape(get_option($csi2)),
+                                                                        'link' => reverse_escape(get_option($csl2))
+                                                                ),
+                                                                'third' => array(
+                                                                        'title' => reverse_escape(get_option($csti3)),
+                                                                        'text' => reverse_escape(get_option($cste3)),
+                                                                        'image' => reverse_escape(get_option($csi3)),
+                                                                        'link' => reverse_escape(get_option($csl3))
+                                                                ),
+                                                                'fourth' => array(
+                                                                        'title' => reverse_escape(get_option($csti4)),
+                                                                        'text' => reverse_escape(get_option($cste4)),
+                                                                        'image' => reverse_escape(get_option($csi4)),
+                                                                       'link' => reverse_escape(get_option($csl4))
+                                                                ),
+                                                                'fifth' => array(
+                                                                        'title' => reverse_escape(get_option($csti5)),
+                                                                        'text' => reverse_escape(get_option($cste5)),
+                                                                        'image' => reverse_escape(get_option($csi5)),
+                                                                       'link' => reverse_escape(get_option($csl5))
+                                                                ),
+                                                                'sixth' => array(
+                                                                        'title' => reverse_escape(get_option($csti6)),
+                                                                        'text' => reverse_escape(get_option($cste6)),
+                                                                        'image' => reverse_escape(get_option($csi6)),
+                                                                       'link' => reverse_escape(get_option($csl6))
+                                                                ) 
+ );
 							?>
 											   
 													<!-- root element for the items --> 
@@ -151,18 +214,65 @@ $imagedir = get_bloginfo( 'template_url' );
 				</div> <!-- end #section_main --> 
 				<div id="section_supplemental"> 
 					<div class="news_strip"> 
-                    		 <?php
-							 $args = array( 'post_type' => 'cpt_sermons',
-							 'showposts' => 1);
-							 $the__events_query = new WP_Query($args);	
-							 global $post;
-							 $sermonposts = get_posts($args);
-							 foreach($sermonposts as $post) : ?>
-						<p>Latest Sermon: <?php the_title(); ?> - <?php the_time('F j, Y'); ?></p> 
-						<a href="<?php if (get_option("cap_mp3_php") == "true"){?><?php echo get_template_directory_uri();?>/includes/mp3.php?file=<?php echo get_post_meta($post->ID, 'sermonmp3', true); ?>&fname=<?php echo get_the_title(); ?><?php } else { echo get_post_meta($post->ID, 'sermonmp3', true); } ?>" target="_blank" id="downloadlatestsermon">Download Latest Sermon</a> 
-						<?php endforeach; ?>
-						<div class="hr"><hr /></div> 
-					</div> 
+              <?php
+
+
+         $surl = get_option("siteurl");
+				 $args = array( 'post_type' => 'cpt_sermons','showposts' => 1);
+				 $the__events_query = new WP_Query($args);	
+				 global $post;
+				 $sermonposts = get_posts($args);
+
+				 foreach($sermonposts as $post) : ?>
+		         	                 <?php
+                                       $whoWrote = get_post_meta($post->ID, 'sermonauthor', true);
+                                       $result = preg_replace( "/ucke/", "xxxx", $whoWrote);
+                                       if ( strcmp($whoWrote, $result)) {
+                                            $who="Tucker";
+                                       } else {
+                                         $result = preg_replace("/ohen/", "xxxx", $whoWrote);
+                                         if (strcmp($whoWrote, $result)) {
+                                             $who="Cohen";
+                                          } else {
+                                            $who = "who"; 
+                                          }
+                                         }
+                                         if (!strcmp($who, "Tucker")) {
+                                              $simg="/wp-content/uploads/2013/07/RTuckerPortrait.jpg";
+                                            } else {
+                                              if (!strcmp( $who, "Cohen")) {
+                                                  $simg="/wp-content/uploads/2013/05/bulliten-photo.jpg";
+                                               } else {
+                                                $simg="/wp-content/uploads/2013/05/Sanc1a1-150x150.png";
+                                               }
+                                         }
+                                       ?>
+
+                                      <img class=alignleft width="76" height="115"  src="<?php echo $surl;echo $simg;?>" > 
+				      <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                                 
+				  	by <?php echo get_post_meta($post->ID, 'sermonauthor', true); ?>
+				     <h3 class="news_strip"><?php echo (strip_tags(trim(get_the_excerpt() ) ) ); ?>
+							 
+				   
+					    
+                                     <br><br>			   
+	                             <a href="<?php echo get_permalink(get_page_by_title("sermons")); ?>">View the sermon archive.</a>
+                                  &nbsp; &nbsp; &nbsp;
+                                     <a href="<?php echo get_permalink(get_page_by_title("erev shabbat messages")); ?>">View the collected Erev Shabbat messages.</a>
+				  </p> 
+		       	          <a href="<?php if (get_option("cap_mp3_php") == "true"){?>
+				  <?php echo get_template_directory_uri();?>/includes/mp3.php?file=
+				  <?php echo get_post_meta($post->ID, 'sermonmp3', true); ?>
+			      		&fname=
+			       		<?php echo get_the_title(); ?>
+			       		<?php } else { echo get_post_meta($post->ID, 'sermonmp3', true); } ?>
+			        		" target="_blank" id="downloadlatestsermon">Download Latest Sermon</a> 
+			     <?php endforeach; ?>
+
+
+			<div class="hr"><hr /></div> 
+			</div> 
 					
 					
 					<div class="module left"> 
@@ -175,7 +285,7 @@ $imagedir = get_bloginfo( 'template_url' );
                             <?php
 							   $args = array( 'post_type' => 'cpt_events',
 							   'post_status' => 'future',
-							   'showposts' => 4,
+							   'showposts' => 6,
 							   'order' => 'ASC');
 							   $the__events_query = new WP_Query($args);	
 							
@@ -193,14 +303,14 @@ $imagedir = get_bloginfo( 'template_url' );
 					
 					<div class="module right"> 
 						<div class="header"> 
-							<h2>News &amp; Announcements</h2> 
+							<h2>In Our Community</h2> 
 							<a href="<?php bloginfo( 'url' ); ?>/news" class="readall">Read All</a> 
 						</div> 
 						<div class="content"> 
 							<ul> 
                            <?php 
 						     $args = array( 'post_type' => 'cpt_news',
-							   'showposts' => 4);
+							   'showposts' => 6);
 							   $the__news_query = new WP_Query($args);	
 							
                            

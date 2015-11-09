@@ -23,6 +23,7 @@ global $homevar;
 							 global $post;
 							 $sermonposts = get_posts($args);
 							 foreach($sermonposts as $post) : ?>
+ 						<?php error_log("ENTERED latest sermon code in footer"); ?> 
 						<p>Latest Sermon: <?php the_title(); ?> - <?php the_time('F j, Y'); ?></p> 
 						<a href="<?php echo get_bloginfo('template_url');?>/includes/mp3.php?file=<?php echo get_post_meta($post->ID, 'sermonfile', true); ?>&fname=<?php echo get_the_title(); ?>" id="downloadlatestsermon">Download Latest Sermon</a> 
 						<?php endforeach; ?>
@@ -87,7 +88,7 @@ global $homevar;
 						<strong><?php bloginfo('name'); ?></strong><br /> 
 						<?php  echo(stripslashes(reverse_escape(get_option('cap_address')))); ?><br /> 
 						<?php  echo(stripslashes(reverse_escape(get_option('cap_phone_number')))); ?><br /> 
-						<strong>Church Office Hours</strong><br /> 
+						<strong>Synagogue Office Hours</strong><br /> 
 						<?php  echo(stripslashes(reverse_escape(get_option('cap_office_hours')))); ?><br />
 						</p> 
 						
@@ -97,15 +98,41 @@ global $homevar;
                             <?php wp_nav_menu( array( 'container' => "", 'menu_class' => "", 'menu_id' => "", 'theme_location' => 'footer_row2' ) ); ?>
                             <?php wp_nav_menu( array( 'container' => "", 'menu_class' => "", 'menu_id' => "", 'theme_location' => 'footer_row3' ) ); ?>
                             <?php wp_nav_menu( array( 'container' => "", 'menu_class' => "", 'menu_id' => "", 'theme_location' => 'footer_row4' ) ); ?>
+
+
+	        <!-- Footer with jewish org logos and image map for linking Norm N. July 2015 -->	
+       
+
+<MAP NAME="map1"> 
+<AREA
+   HREF="http://www.uscj.org/default.aspx" ALT="UCSJ" TITLE="UCSJ" TARGET="_blank"
+   SHAPE=RECT COORDS="8,6,122,84">
+<AREA
+   HREF="https://fjmc.org/" ALT="FJMC" TITLE="FJMC"  TARGET="_blank"
+   SHAPE=RECT COORDS="130,6,253,80">
+<AREA
+   HREF="http://wlcj.org/" ALT="WomensLeague" TITLE="WomensLeague"  TARGET="_blank"
+   SHAPE=RECT COORDS="270,8,361,87">
+<AREA
+   HREF="http://www.usy.org" ALT="USY" TITLE="United Synagogue Youth"  TARGET="_blank"
+   SHAPE=RECT COORDS="377,7,504,847">
+<AREA
+   HREF="http://www.keshetonline.org/" ALT="Keshet" TITLE="Keshet"  TARGET="_blank"
+   SHAPE=RECT COORDS="515,8,627,85">
+</MAP>
+
+	         <div class="footerflag1" >
+                <?php $surl=get_option("siteurl"); $simg="/wp-content/uploads/2015/07/All5Logos.png";?>
+                <img src="<?php echo $surl;echo $simg;?>" alt="jewish org  logos" usemap="#map1"  style="align:right;width:645px;height:90px;">				
+		</div>				
 						
-						
-						
-						
-						<div class="hr"><hr /></div> 
+	        <!-- END LOGO BANNER FOOTER CODE -->
+					
+					<div class="hr"><hr /></div> 
 					</div> 
 					
 					<div id="legal"> 
-						<p>&copy; <?php echo date(Y); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p> 
+						<p>&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>. All Rights Reserved.</p> 
 						<a href="http://www.mintthemes.com" id="churchthemer">Moses Theme by Church Themer</a> 
 						
 						<div class="hr"><hr /></div> 
