@@ -1,0 +1,282 @@
+Church Themer Theme for WordPress
+Theme Name: Moses Theme
+Created: Oct 15, 2010
+By: Adam Pickering, Phil Johnston
+Contact Info: Visit www.churchthemer.com
+
+
+----------------------------------------------------------------------------------------------------------
+
+VERSION HISTORY
+==1.8.7.2 - July 27, 2013
+Changed "Replys" to "Replies" on archive pages
+
+==1.8.7.1 - May 29, 2013
+CSS adjustment for dots below slider
+
+==1.8.7.0 - December 11, 2012
+Added Sermon Taxonomy for categories
+
+==1.8.6.9 - December 11, 2012
+Fixed wpdb prepare
+Removed update notifier
+
+==1.8.6.8 - October 30, 2012
+- Added 'showposts' => 50000 to events.php
+
+==1.8.6.7 - September 20, 2012
+-Removed Press Trends from functions.php
+
+==1.8.6.6 - August 14, 2012
+- Added "margin-top: 0px" to ".gallery .gallery-caption" in base_styles.css
+
+==1.8.6.5 - July 10, 2012
+-Added theme option for mp3.php to theme-options.php and included it for the sermon widget
+
+==1.8.6.4 - June 29, 2012
+- Added cap_email to theme options under the podcast settings
+
+==1.8.6.3 - May 15, 2012
+-Added theme option for mp3.php to theme-options.php 
+-Made change to mp3.php to use the above option in single-spt_sermons.php, sermons.php, and index.php 
+
+==1.8.6.2 - April 20, 2012
+- Fixed up sidebar CSS
+- Changed if statements on index for "3 home page images" to check for "First Image"Éetc - It was checking for "Image URL" 
+- Added Child Theme support
+
+==1.8.6.1 - April 19, 2012
+- Updated PressTrends code to "Easier Integration"
+- Added styling for the address link for each style (line 120 of each stylesheet)
+.location a
+
+==1.8.6.0 - April 16, 2012
+-Added htmlspecialchars to podcast page template for the &
+-Added Update Notifier so users know when new version are released.
+-Removed changelog.php as all notes are now made in the ReadMe file.
+- Added Address Link to the header.php and theme-options.php
+
+==1.8.5.9 - April 3, 2012
+-Updated mp3.php to check if the file is an MP3. This closes a major security risk.
+-Added Press Trends
+
+==1.8.5.8 - Mar 26, 2012
+-Added style for ordered lists in base_styles.css for bullet points. Line 1144: .page_content ol {list-style: square inside none;}
+-Added if statements for if the user has no text in home page images and slider images in index.php
+-Added reverse escape to all variables in the mintthemes_podcast_page_template.php to help escape the andpersand symbol
+-Removed call to default.css in admin-functions.php on line 24
+
+==1.8.5.7 - Mar 19, 2012
+-Added if statements to header.php on line 72 to check if the user has entered an address and worship times or not. 
+-Added if statements to index.php on line 122 to check if the 3 home page images have been entered.
+-Added logo size to description of logo in theme-options.php
+-Fixed description of the 3 home page images to be the correct sizes in theme-options.php
+-Updated Screenshot
+- Updated TimThumb to version 2.8.10
+-Added if statement to header.php for description to show or not - line 102
+-Added "$select_value = htmlspecialchars($select_value, ENT_QUOTES);" to line 713 of admin/admin-interface.php. This allows the andpersand symbol to work properly in dropdown select fields.
+-Added style in base_styles.css for bullet points. Line 1144: .page_content ul {list-style: square inside none;}
+
+==1.8.5.6 - Feb 5, 2012
+-Fixed problem with the content of a sermon not showing in the sidebar widget. Changed the call to "the_excert()" to a database call instead and manually outputted the content. Near line 474 in functions.php
+-Added gallery styling to base_styles.css near line 1089
+
+==1.8.5.5 - Jan 25, 2012
+-Added religion and spirituality to the Podcast categories - and fixed some errors in formatting with HTML special characters.
+-Upgraded Jplayer to version 2.1.0 - this should cause it work properly in IE8 and beyond.
+- Added body class to code in header.php 
+<body <?php body_class($class); ?>> 
+
+==1.8.5.4 - Jan 6, 2012
+-Made bullets in content set to inside instead of outside - as they would clash with left aligned images.
+-Fixed widths of sidebar widget ul's as they were too short.
+-Fixed sermon sidebar widget. It was referencing 'sermonfile' as the custom post type - it should have been referencing 'sermonmp3' on line 497 of functions.php
+
+==1.8.5.3 - Dec 19, 2011
+-Fixed Podcasting issue by creating a podcasting page and page template instead of using the built in add_feed function - which was throwing 404 errors in iTunes
+-Updated Timthumb script to version released on Dec 9, 2011
+
+==1.8.5.2 - Oct 27, 2011
+Fixed jQuery search and comment fields 
+
+==1.8.5.1 - Oct 5, 2011
+Activated flash fallback for sermon streaming and removed OGGs
+Fixed sermon streaming popup link on the single sermon page
+
+==1.8.5 - July 14, 2011
+Changed the sermon popup from file_get_contents to just using URL variables
+Changed all references to get_option to include the reverse function to get rid of any slashing
+
+==1.8.4 - July 13, 2011
+Fixed jQuery issues with Wordpress 3.2.1
+Fixed slashing issue on Theme Options
+
+==1.8.3 - June 17th, 2011
+Fixed Image alignment issues
+
+==1.8.2 - June 17th, 2011
+- Fixed Issue with Pagination on Custom Post Types
+- Added support for Podcasting
+- Added CSS Styling for bullets and lists in blogs
+- Updated thumb.php to latest version
+
+==1.8.1 - March 18th, 2011
+- Switched Theme Options from CheezCap to new Theme Options
+
+==1.8== March 14, 2011
+Switched from CheezCap to new Theme Options panel
+
+==1.7== February 7, 2011
+Recovered new version of Jquery embedding that dropbox removed. 
+
+==1.6== February 2, 2011
+Includes/customposttypes was removed for an unknown reason. Re-added it.
+
+==1.5 - January 24th, 2011
+-Updated cheezcap functions
+
+==1.4 - December 30th, 2010
+-Added HTML5 MP3 Player
+-Fixed related bugs
+-Fixed category.php bug not displaying categories properly
+
+==1.3 - December 4th, 2010
+-Added links to Header Slider
+-Added "Prev" and "Next" pagination for Sermons, news, archives, and category pages
+-Added full-width page support
+
+==1.2 - November 9, 2010
+-Added second tier dropdown navigation
+-Fixed Bugs
+
+== 1.1 - Oct 24, 2010 ==
+- Changed the home page slider to only show images when they are entered
+- Changed the logo image area to show the Site Title if no image exists
+
+== 1.0 ==
+
+Church Themer: Moses Theme, First release.
+
+----------------------------------------------------------------------------------------------------------
+
+TABLE OF CONTENTS
+
+A) Initial Setup Instructions
+B) Setting up Events, News, and Sermons.
+C) Create Navigation Menu's
+D) Church Theme Options
+E) Adding an Event
+F) Adding a Sermon
+G) Adding News
+H) Widgets
+
+Video Tutorial: 
+http://www.youtube.com/watch?v=MwBoD9JENVk&feature=mfu_in_order&playnext=1&videos=7svYQMc02ck
+
+
+----------------------------------------------------------------------------------------------------------
+
+A) Initial Setup Instructions
+
+1. Make sure you have Wordpress installed on your web server.
+2. Download the theme and upload it to your wp-content/themes/ directory in your FTP. 
+3. Log into Wordpress and activate the theme by going to the Appearance > Themes tab.
+
+Video Tutorial: http://www.youtube.com/watch?v=MwBoD9JENVk
+
+----------------------------------------------------------------------------------------------------------
+
+B) Setting up Events, News, and Sermons.
+
+1. Go to Pages > Add new 
+2. Give the page the corresponding name Events, News, or Sermons
+3. On the right hand side under "Page Attributes" choose the corresponding page template
+
+Repeat the above steps for each of the 3 (events, news, sermons)
+
+Video Tutorial: http://www.youtube.com/watch?v=MwBoD9JENVk
+----------------------------------------------------------------------------------------------------------
+
+C) Create Navigation Menus
+
+You can set up custom navigation menus for this theme by going to Appearance > Menus.
+
+1. Create a new Menu. Give it a menu name and click "Create Menu". Call it something like "Main Navigation" or "Header Navigation"
+2. You'll now see "Theme Locations" on the left hand panel. The locations in this theme are:
+	- Primary Navigation (shows up in the header where the main navigation buttons are)
+	
+	- Footer Navigation Column 1 (shows up at the bottom of the page. This is the first column)
+	- Footer Navigation Column 2 (shows up at the bottom of the page. This is the second column)
+	- Footer Navigation Column 3 (shows up at the bottom of the page. This is the third column)
+	- Footer Navigation Column 4 (shows up at the bottom of the page. This is the fourth column)
+
+3. Select from the drop-down where you would like this menu to show up on the website
+4. Select the pages you would like to be displayed in the menu by selecting them and clicking "Add to menu"
+
+Repeat this process for each footer column as well.
+
+Video Tutorial:
+http://www.youtube.com/watch?v=GRsIbSC1lMU
+----------------------------------------------------------------------------------------------------------
+
+D) Church Theme Options
+
+1. Click on "Church Theme Options
+2. Fill in the fields with the requested information
+
+Note: If the field is asking for an image or file, click on "Upload one here", upload the image, copy the URL it creates, close the dialog, and paste the URL into that field. 
+
+Video Tutorial:
+http://www.youtube.com/watch?v=pt0qjdSrkmU
+----------------------------------------------------------------------------------------------------------
+
+
+E) Adding an Event
+
+1. Click on Events > Add new event 
+2. Give the event a name and description.
+3. On the right hand side where it says "Event Date", click "edit" to set the event's date. The default is today's date.
+4. At the bottom you can enter an address and a URL to a map. (Google Maps or Mapquest are probably your best options)
+5. You can also add a Featured Image on the right hand side.
+
+Video Tutorial:
+http://www.youtube.com/watch?v=fFvRDFl4GvM
+
+----------------------------------------------------------------------------------------------------------
+
+F) Adding a Sermon
+
+1. Click on Sermons > Add new sermon 
+2. Give the Sermon a name and enter any sermon text or notes.
+4. At the bottom you can enter the URL to a sermon MP3 File. Click "Upload one here", upload the sermon MP3, copy the file's URL, close the dialog, and paste the url into the field.
+5. You can also add the Sermon Author's Name.
+6. Save/Update the sermon.
+
+Video Tutorial:
+http://www.youtube.com/watch?v=fFvRDFl4GvM
+
+----------------------------------------------------------------------------------------------------------
+
+G) Adding news
+
+1. Click on News > Add news
+2. Give the news article a name and text.
+3. Save/Update the news.
+
+Video Tutorial:
+http://www.youtube.com/watch?v=fFvRDFl4GvM
+----------------------------------------------------------------------------------------------------------
+
+H) Widgets
+
+There are two custom widgets included with this theme.
+
+1. To activate any widgets and put them on the sidebar, click on Appearance > Widgets
+2. Drag widgets onto the "Primary Widget Area"
+
+There is a custom search widget included with the theme. It is styled to match the theme. There is also a "Latest Sermon" Widget which automatically displays the latest sermon.
+
+Video Tutorial:
+http://www.youtube.com/watch?v=lFv5XdcIamc
+----------------------------------------------------------------------------------------------------------
+

@@ -1,0 +1,1159 @@
+/* CSS by Dave Joyce
+/* 9/14/10
+/* Some parts are commented out because those styles exist in the theme CSS sheets */
+
+
+
+
+body { 
+/* 	background: #f3f3f3 url(images/minimal/background.png) repeat center top; */
+	font: 62.5% "Helvetica Neue", Helvetica, Geneva, Arial, Verdana, sans-serif;
+/* 	color: #555555; */
+	position: relative;
+	min-height: 300px;
+}
+
+
+/* Main Structure
+------------------------------------------------------- */
+#site_info_wrap {
+/* 	background: #e3e3e3 url(images/minimal/background_dark_gray.png) repeat center top; */
+}
+
+	#site_info {
+		width: 940px;
+		padding: 0 30px;
+		margin: 0 auto;
+		font-size: 12px;
+		line-height: 36px;
+		font-family: "MuseoSans500";
+	}
+
+#header_wrap {
+	background: transparent;
+	position: relative;
+	height: 151px;
+}
+
+	#header {
+		width: 980px;
+		padding: 0 10px;
+		margin: 0 auto;
+		font-size: 12px;
+		font-family: "MuseoSans500";
+	}
+
+
+#page_wrapper_outer {
+/* 	background: transparent url(images/minimal/page_wrapper_top.jpg) repeat-x 0 0; */
+	clear: both;
+	position: relative;
+}
+	
+	#page_wrapper {
+		border-bottom: 1px solid #f3f3f3;
+		position: relative;
+		clear: both;
+	}
+	
+		#page {
+			width: 980px;
+			padding: 20px 10px 0 10px;
+			margin: 0 auto;
+		}
+
+/* Site Info
+------------------------------------------------------- */
+
+	#site_info span.location {
+		float: left;
+	}
+	
+		#site_info span.location span.icon {
+			background: transparent url(images/minimal/misc-sprite.png) no-repeat 0 0; 
+			display: block;
+			height: 0;
+			padding-top: 28px;
+			width: 25px;
+			margin-top: 4px;
+			float: left;
+		}
+	
+	#site_info span.time {
+		float: right;
+	}
+		
+		#site_info span.time span.icon {
+ 			background: transparent url(images/minimal/misc-sprite.png) no-repeat -25px 0; 
+			display: block;
+			height: 0;
+			padding-top: 28px;
+			width: 25px;
+			margin-top: 4px;
+			margin-right: 6px;
+			float: left;
+		}
+
+/* Branding + Nav
+------------------------------------------------------- */
+#header {
+	padding-top: 24px;
+}
+
+	#header h1#branding {
+		font-size: 31px;
+		line-height: 61px;
+		height:63px;
+		float: left;
+		font-family: "MuseoSans500";
+	}
+	
+		#header h1#branding a {
+			width: 320px;
+			padding-top: 0px;
+			margin-right: 5px;
+			display: block;
+			float: left;
+/* 			background: transparent url(images/minimal/branding.png) no-repeat 0 0; */
+			display: block;
+			height: 0;
+		}
+		#header h1#branding a img{
+			height:61px;	
+		}
+	
+	#header h2 {
+		font-size: 18px;
+		font-weight: 300;
+		font-family: "MuseoSans300";
+		float: right;
+		padding-right: 20px;
+		margin-top:20px;
+	}
+
+
+	#nav {
+		float: left;
+		padding-top: 28px;
+		clear: both;
+		width: 980px;
+		position: relative;
+	}
+		
+		#nav > .menu-header >  ul > li, #nav > .home-button >  ul > li {
+			float: left;
+			display: block;
+			position: relative;
+			height: 36px;
+			background-color: #FFF;
+		}
+		
+			
+			#nav > .menu-header > ul > li > a, #nav > .home-button > ul > li > a {
+				width: 162px;
+				
+				display: block;
+				float: left;
+				text-align: center;
+				
+				line-height: 36px;
+				color: #555555;
+				text-decoration: none;
+				font-size: 15px;
+				text-transform: uppercase;
+			}
+						
+			#nav > .menu-header >  ul > li > a:hover, #nav > .home-button >  ul > li > a:hover  {
+				opacity: .9;
+			}
+			
+			
+			#nav > .home-button >  ul > li:first-child > a {
+				width: 164px; /* make the first slightly longer to even total nav width to 980 wide */
+				border-left: none;
+			}
+
+/* Nav Drop Down
+----------------------------------------------------------------------------------- */
+	
+
+
+	
+	
+	#nav > .menu-header > ul > li > ul {
+		display: block;
+		position: absolute;
+		top: 36px;
+		left: 0px;
+		font-size: 1em;
+		z-index: 3000;
+		font-size: 1em;
+	}
+	
+	#nav > .menu-header > ul > li > ul > li {
+		z-index: 1000;
+		display: block;
+
+	}
+
+	
+	#nav > .menu-header > ul > li > ul{
+		display:none;
+		
+	}
+	
+	#nav > .menu-header > ul > li:hover ul {
+		display: block;
+	}
+
+/* Nav Drop Down second tier
+----------------------------------------------------------------------------------- */
+		
+	#nav > .menu-header > ul > li > ul > li > ul{
+		position:absolute;
+		left:150px;
+		margin-top:-20px;
+	}
+	#nav > .menu-header > ul > li > ul > li > ul, #nav > .menu-header > ul > li > ul > li > ul >li > a{
+		display:none;
+	}
+	#nav > .menu-header > ul > li > ul > li:hover > ul, #nav > .menu-header > ul > li > ul > li:hover ul li a{
+		display:block;
+	}
+
+/* Page
+------------------------------------------------------- */
+
+	#section_main {
+		background-color: #FFF;
+		padding: 20px;
+		min-height: 210px;
+	}
+		
+		#section_main h1.two_col {
+			font-size: 30px;
+			font-family: "MuseoSans500";
+			margin-left: 240px;
+			margin-bottom: 20px;
+		}
+		
+		#section_main h1.one_col {
+			font-size: 30px;
+			font-family: "MuseoSans500";
+			margin-bottom: 20px;
+		}
+		
+		#section_main .page_content {
+			font-size: 12px;
+			width: 460px;
+			float: left;
+			line-height: 18px;
+			margin: 20px 20px 20px 0;
+		}
+			
+			#section_main .page_content.full {
+				width: 700px;
+				margin: 0 0 20px 0;
+			}
+			
+			#section_main .page_content.one_col {
+				width: 900px;
+				margin: 0 0 20px 0;
+			}
+			
+			#section_main .page_content p {
+				margin-bottom: 15px;
+			}
+			
+			.page_content a { color: #555; }
+			
+		
+	
+	#section_supplemental {
+		margin: 0 10px;
+	}
+	
+/* Blog List
+------------------------------------------------------- */
+#bloglist{
+	width:100%
+}
+#bloglist th.posted_on { width: 120px; }
+#bloglist th.title { width: 140px; }
+#bloglist th.replys { width: 30px; }
+
+#bloglist td.title { font-weight: 600; }
+#bloglist td.replys { text-align: center; }
+
+
+#bloglist thead th {
+	background-color: #E1E1E1;
+	padding: 10px;
+	text-align: left;
+}
+
+#bloglist tbody td {
+	border-bottom: 1px solid #CCC;
+	padding: 10px;
+}
+
+.page_content a, a { color: #555; }
+						
+
+
+/* Comments
+------------------------------------------------------- */
+	#commentform{
+		width:460px;
+	}
+	.page_content .comments {
+		padding-top: 30px;
+	}
+		
+		.page_content h2 {
+			font-size: 22px;
+			font-family: "MuseoSans500";
+			margin-bottom: 20px;
+		}
+		.page_content h3 {
+			font-size: 13px;
+			font-family: "MuseoSans500";
+			margin-bottom: 5px;
+		}
+	
+			
+			
+			/* regular comment */
+			.comments ul li {
+				display: block;
+				width: 460px;
+			}
+			
+				.comments ul li .comment_wrap {
+/* 					background: transparent url(images/minimal/form-sprite.png) no-repeat 0 0; */
+					padding-top: 17px;
+				}
+				
+					.comments ul li .comment_wrap .comment {
+/* 						background: transparent url(images/minimal/comment_body_repeat-y.png) repeat-y 0 0; */
+						padding: 0 20px 0 70px;
+						position: relative;
+					}
+					
+					.comments ul li .comment_wrap .comment .avatarimg {
+						position: absolute;
+						top: -5px;
+						left: 10px;
+					}
+				
+				.comments ul li .comment_bottom {
+/* 					background: transparent url(images/minimal/form-sprite.png) no-repeat 0 -89px; */
+					height: 30px;
+				}
+				
+				
+			/* admin comment */
+				.comments ul li.admin .comment_wrap {
+					background-position: 0 -120px;
+				}
+				
+					.comments ul li.admin .comment_wrap .comment { background-position: -460px 0; min-height: 70px; }
+					
+					.comments ul li.admin .comment_wrap .comment .avatar {
+/* 						background: transparent url(images/minimal/form-sprite.png) no-repeat -19px -137px; */
+						position: absolute;
+						top: 0px;
+						left: 19px;
+						height: 73px;
+						width: 33px;
+					}
+				
+				.comments ul li.admin .comment_bottom {
+					background-position: 0 -209px;
+				}
+				
+				.comments ul li.admin .comment_info {
+					text-align: right;
+				}
+				
+				.url {
+					color:#555555;
+				}
+/* Nav Sub
+------------------------------------------------------- */
+	
+	#nav_sub {
+		width: 220px;
+		float: left;
+		margin-right: 20px;
+		min-height:600px;
+	}
+	
+		#nav_sub ul li > a {
+			color: #555555;
+			font-size: 12px;
+			line-height: 25px;
+			text-decoration: none;
+			font-family: "MuseoSans500";
+			
+		}
+		
+		
+		
+		#nav_sub ul li:last-child a { border-bottom: none; }
+		
+		
+		
+		
+		
+/* Form Fields
+------------------------------------------------------- */
+
+div.text_fields{
+	width: 220px;
+	float: left;
+}
+
+p.comment-form-comment label, p.comment-form-author label, p.comment-form-email label, p.comment-form-url label, p.comment-form-author span, p.comment-form-email span, p.comment-form-url span, p.form-submit{
+	display:none;
+}
+
+#section_main .page_content .comment p{
+	margin-bottom:0px;
+}
+
+#section_main .page_content p.field_text, #section_main .page_content p.comment-form-author, #section_main .page_content p.comment-form-email, #section_main .page_content p.comment-form-url{
+	height: 33px;
+	margin-bottom: 10px;
+	float: left;
+	position: relative;
+/* 	background: transparent url(images/minimal/form-sprite.png) no-repeat 0 -240px; */
+	width: 220px;
+}
+
+	p.field_text input, p.comment-form-author input, p.comment-form-email input, p.comment-form-url input{
+		width: 172px;
+		float:left;
+		font-size:14px;
+		border:0;
+		background:none;
+		outline:none;
+		height:21px;
+		line-height: 21px;
+		position: relative;
+		padding:7px 9px 5px 39px;
+		display:block;
+		color:#6d6d6d;
+	}
+
+#section_main .page_content p.field_text.email, p.comment-form-email { background-position: 0 -283px }
+#section_main .page_content p.field_text.website, p.comment-form-url { background-position: 0 -326px }
+	
+	
+div.field_message {
+/* 	background: transparent url(images/minimal/form-sprite.png) no-repeat -240px -240px; */
+	width: 220px;
+	height: 119px;
+	margin-bottom: 10px;
+	float: right;
+	position: relative;
+}
+
+	div.field_message textarea {
+		width: 176px;
+		height: 103px;
+		padding:7px 9px 7px 35px;
+		border:0;
+		background:none;
+		outline:none;
+		
+	}
+
+
+
+			/* Submit button - nothing tricky, simple image replacement */
+			.comments input[type="submit"].submitcomment {
+				border: none;
+				cursor: pointer;
+/* 				background: transparent url(images/minimal/misc-sprite.png) no-repeat -720px -25px; */
+				overflow: hidden;
+				text-indent: -9999px;
+				display: block;
+				float: right;
+				height: 27px;
+				text-indent: -9999px;
+				width: 132px;
+				padding: 27px 0 0 0;
+			}
+			
+			.comments input[type="submit"].submitcomment:active {
+
+			}
+
+
+
+/* Front Page Scrollable
+ ------------------------------------------------------- */ 
+	.scrollable {
+		position: relative;
+		overflow: hidden;
+		width: 940px;
+		height: 340px;
+		font-family: "MuseoSans500";
+	}
+	
+	.scrollable .items {
+		width: 20000em;
+		position: absolute;
+	}
+	
+	.scrollable .items div.item {
+		float: left;
+		position: relative;
+	}
+	
+		.scrollable .items div.item .text {
+			position: absolute;
+			top: 200px;
+			right: 0;
+			color: #FFF;
+			text-shadow: #000 1px 1px 1px;
+			font-size: 11px;
+			text-transform: uppercase;
+			width: 480px;
+			padding: 10px;
+
+			
+			background: transparent url(images/black_45prcnt.png) repeat 0 0;
+			background-clip: padding-box;
+			border-width: 1px;
+			-moz-background-clip: padding-box;
+			-moz-background-clip: padding;
+			-webkit-border-image:url(images/border.png) 1 repeat;
+			-moz-border-image:url(images/border.png) 1 repeat;
+			border-image:url(images/border.png) 1 repeat;
+			border-right-width: 0;
+		}
+		
+		.scrollable .items div.item .text h1 {
+			font-size: 20px;
+			font-weight: 500;
+			font-family: "MuseoSans500";
+		}
+		
+		.scrollable .items div.item .text p {
+			padding-top: 5px;
+		}
+		
+	/* navi */
+	
+	.navi_wrap {
+		
+		border-top: 1px solid #e1e1e1;
+		margin-top: 18px;
+		position: relative;
+	}
+	
+		.navi {
+			clear: both;
+			background-color: #FFF;
+			position: relative;
+			top: -14px;
+			padding: 0px 50px 0px 50px;
+			float: left;
+			left: 50%;			
+		}
+		
+			.navi a {
+/* 				background: #FFF url(images/minimal/misc-sprite.png) no-repeat -75px 0; */
+				float: left;
+				width: 25px;
+				height: 28px;
+				margin: 0 9px;
+
+			}
+			
+			.navi a.active {
+				background-position: -51px 0;
+			}
+	
+
+
+/* Front Page Highlights
+------------------------------------------------------- */
+
+a.highlight {
+	display: block;
+	position: relative;
+	width: 300px;
+	height: 140px;
+	text-decoration: none;
+	color: #FFF;
+	float: left;
+	margin-left: 20px;
+	font-family: "MuseoSans500";
+}
+
+.highlights {
+	position:relative;
+}
+	.highlights h2 {
+		font-family: "MuseoSans500";
+		position: absolute;
+		bottom: 0;
+		font-size: 20px;
+		color: #FFF;
+		line-height: 36px;
+		width: 280px;
+		height: 35px;
+		padding: 0 10px;
+		font-weight: 500;
+		text-transform: uppercase;
+		text-shadow: #000 0px 1px 1px;
+		margin-top:135px;
+		top:-31px;
+		
+		background: transparent url(images/black_45prcnt.png) repeat 0 0;
+		background-clip: padding-box;
+		border-top-width: 1px;
+		-moz-background-clip: padding-box;
+		-moz-background-clip: padding;
+		-webkit-border-image:url(images/border.png) 1 repeat;
+		-moz-border-image:url(images/border.png) 1 repeat;
+		border-image:url(images/border.png) 1 repeat;
+		
+	}
+	.highlights a{
+		text-decoration:none;
+	}
+.second-h2{
+	left:320px;
+}
+.third-h2{
+	left:640px;
+}
+
+.highlights a.highlight:first-child {
+	margin-left: 0;
+}
+
+
+/* News Strip
+------------------------------------------------------- */
+.news_strip {
+	background-color: #e1e1e1;
+	padding: 10px;
+	font-size: 14px;
+	font-family: "Helvetica Neue", Helvetica, Geneva, Arial, Verdana, sans-serif;
+	font-weight: 600;
+	text-shadow: #FFF 0px 1px 1px;
+	margin-bottom: 20px;
+}
+
+.news_strip p {
+	float: left;
+	line-height: 38px;
+	width: 710px;
+	overflow: hidden;
+}
+
+	.news_strip p small {
+		font-size: 12px;
+	}
+
+#downloadlatestsermon {
+	background: transparent url(images/minimal/misc-sprite.png) no-repeat -100px 0; 
+	overflow: hidden;
+	text-indent: -9999px;
+	display: block;
+	height: 0;
+	width: 222px;
+	padding-top: 38px;
+	display: inline-block;
+	float: right;
+}
+
+#followusontwitter {
+/* 	background: transparent url(images/minimal/misc-sprite.png) no-repeat -325px 0; */
+	overflow: hidden;
+	text-indent: -9999px;
+	display: block;
+	height: 0;
+	width: 222px;
+	padding-top: 38px;
+	display: inline-block;
+	float: right;
+}
+
+
+
+/* Buttons
+------------------------------------------------------- */
+a.readall,
+a.readmore,
+a.viewall,
+a.viewmore,
+a.download {
+ 	background: transparent url(images/minimal/misc-sprite.png) no-repeat 0 0; 
+	overflow: hidden;
+	text-indent: -9999px;
+	display: block;
+	height: 0;
+	width: 83px;
+	padding-top: 23px;
+}
+	
+	a.viewall { background-position: -550px 0; }
+	a.viewmore { background-position: -550px -25px; }
+	a.readall { background-position: -635px 0; }
+	a.readmore { background-position: -635px -25px; }
+	a.download { background-position: -720px 0; }
+	
+
+/* Modules (front page left and right)
+------------------------------------------------------- */
+#section_supplemental .module {
+	width: 470px;
+	float: left;
+	margin-bottom: 20px;
+}
+
+#section_supplemental .module.left { margin-right: 20px; }
+	
+	/* header */
+	#section_supplemental .module .header {
+		background-color: #e1e1e1;
+		float: left;
+		width: 440px;
+		padding: 10px 15px;
+	}
+
+		#section_supplemental .module .header h2 {
+			font-size: 18px;
+			text-shadow: #FFF 0px 1px 1px;
+			font-weight: 500;
+			float: left;
+			font-family: "MuseoSans500";
+		}
+		
+		#section_supplemental .module .header a.viewall,
+		#section_supplemental .module .header a.readall {
+			float: right;
+		}
+	
+	/* content */
+	#section_supplemental .module .content {
+		background-color: #FFF;
+		float: left;
+		width: 440px;
+		padding: 5px 15px;
+		font-size: 12px;
+		font-family: "Helvetica Neue", Helvetica, Geneva, Arial, Verdana, sans-serif;
+		line-height: 18px;
+	}
+	
+		#section_supplemental .module .content h3 {
+			font-size: 14px;
+		}
+		
+		#section_supplemental .module .content h3 small {
+			font-size: 12px;
+			font-weight: 400;
+		}
+		
+		#section_supplemental .module .content ul li {
+			width: 350px;
+			padding: 10px 90px 10px 0;
+			position: relative;
+			line-height: 23px;
+		}
+		
+			#section_supplemental .module .content ul li a.viewmore,
+			#section_supplemental .module .content ul li a.readmore {
+				position: absolute;
+				right: 0;
+				bottom: 13px;
+			}
+			
+			#section_supplemental .module .content ul li p { line-height:  18px; }
+		
+		
+		
+
+
+
+/* Footer
+------------------------------------------------------- */
+#footer {
+	clear: both;
+	font-size: 12px;
+}
+
+	#footer a {
+		color: #555555;
+		text-decoration: none;
+	}
+	
+		#footer a:hover {
+			text-decoration: underline;
+		}
+
+	
+
+		/* Supplemental Details
+		------------------------------------------------------- */
+		#supplemental_details {
+			background-color: #FFF;
+			float: left;
+			width: 940px;
+			margin: 0 10px 0 10px;
+			padding: 10px;
+		}
+		
+			#supplemental_details p.links {
+				float: left;
+				display: block;
+				padding: 10px 0 0 0;
+				font-size: 12px;
+			}
+			
+				#supplemental_details p.links strong {
+					font-size: 14px;
+					text-transform: uppercase;
+					float: left;
+		
+				}
+			
+			
+			#supplemental_details a.twitter,
+			#supplemental_details a.facebook,
+			#supplemental_details a.flickr, 
+			#supplemental_details a.youtube,
+			#supplemental_details a.vimeo,
+			#supplemental_details a.pinterest{
+				overflow: hidden;
+				text-indent: -9999px;
+				height: 0;
+				padding-top: 13px;
+				display: block;
+				margin: 0 10px;
+				float: left;
+				font-size: 14px;
+				
+			}
+			
+				#supplemental_details a.twitter {
+					height: 11px;
+    				width: 86px;
+					background: transparent url(images/minimal/twitter-minimal.png) no-repeat 0 0; */
+				}
+				
+				#supplemental_details a.facebook {
+					height: 11px;
+    				width: 69px;
+					background: transparent url(images/minimal/facebook-minimal.png) no-repeat 0 0; */
+				}
+				#supplemental_details a.youtube {
+					height: 11px;
+    				width: 51px;
+					background: transparent url(images/minimal/youtube-minimal.png) no-repeat 0 0; */
+				}
+				#supplemental_details a.vimeo {
+					height: 11px;
+    				width: 60px;
+					background: transparent url(images/minimal/vimeo-minimal.png) no-repeat 0 0; */
+				}
+				#supplemental_details a.pinterest {
+					height: 11px;
+    				width: 67px;
+					background: transparent url(images/minimal/pinterest-minimal.png) no-repeat 0 0; */
+				}
+			
+			#supplemental_details p a {
+				color: #555555;
+				text-decoration: none;
+				display: inline-block;
+				margin: 0 10px;
+				line-height: 14px;
+			}
+			
+			
+				#supplemental_details p a.emailupdates span.icon {
+/* 					background: transparent url(images/minimal/misc-sprite.png) no-repeat -215px -41px; */
+					width: 20px;
+					display: inline-block;
+					height: 13px;
+					margin: 0px 5px 0 0;
+					position: relative;
+					top: 1px;
+				}
+				
+				#supplemental_details p a.inviteafriend span.icon {
+/* 					background: transparent url(images/minimal/misc-sprite.png) no-repeat -243px -41px; */
+					width: 22px;
+					display: inline-block;
+					height: 13px;
+					margin: 0px 5px 0 0;
+					position: relative;
+					top: 1px;
+				}
+		
+		
+		/* Search Field
+		------------------------------------------------------- */
+		#search, #search_widget {
+			float: right;
+		}
+		
+		#search p.text_field, #search_widget p.text_field{
+			height: 33px;
+			float: left;
+			clear: left;
+			position: relative;
+			display: block;
+		}
+		
+		
+			#search p.text_field {
+/* 				background: transparent url(images/minimal/form-sprite.png) no-repeat 0 -360px; */
+				width: 184px;
+			}
+			#search_widget p.text_field {
+/* 				background: transparent url(images/minimal/form-sprite.png) no-repeat 0 -360px; */
+				width: 144px;
+			}
+			#search p.text_field input { width: 167px; }
+			#search_widget  p.text_field input { width: 137px; }
+			#search p.text_field input, #search_widget p.text_field input{
+				float:left;
+				font-size:14px;
+				border:0;
+				background:none;
+				outline:none;
+				height:21px;
+				position: relative;
+				padding: 7px 9px 5px 9px;
+				text-shadow: #FFF 0px 1px 1px;
+				font-weight: 600;
+				display:block;
+			}
+			
+			/* Submit button - nothing tricky, simple image replacement */
+			#search input[type="submit"], #search_widget input[type="submit"] {
+				border: none;
+				cursor: pointer;
+/* 				background: transparent url(images/minimal/form-sprite.png) no-repeat -185px -360px; */
+				overflow: hidden;
+				text-indent: -9999px;
+				display: block;
+				float: left;
+				height: 33px;
+				text-indent: -9999px;
+				width: 35px;
+				padding: 33px 0 0 0;
+			}
+			
+			#search input[type="submit"]:active, #search_widget input[type="submit"]:active {
+				background-position: -405px -360px;
+			}
+			
+			
+		/* Site Info
+		------------------------------------------------------- */
+		#site_map {
+			clear: both;
+			text-shadow: #FFF 0px 1px 1px;
+			font-size: 12px;
+			line-height: 18px;
+			margin: 10px 10px 0 10px;
+			padding-bottom: 30px;
+/* 			background: transparent url(images/minimal/divider.png) repeat-x 0 100%; */
+		}
+		
+		#footer #site_map strong {
+			font-weight: 600;
+		}
+		
+		#site_map p {
+			padding: 20px 10px;
+			width: 140px;
+			display: block;
+			float: left;
+		}
+		
+		#site_map ul {
+			padding: 20px 10px;
+			width: 140px;
+			display: block;
+			float: left;
+		}
+		#site_map .sub-menu {
+			margin-top:-20px;	
+			margin-bottom:-20px;	
+		}
+		
+		#site_map p.address_hours {
+			width: 300px;
+		}
+		
+		
+		/* Legal
+		------------------------------------------------------- */
+		#legal {
+/* 			background: transparent url(images/minimal/divider.png) repeat-x left bottom; */
+			line-height: 50px;
+			margin: 0 10px 50px 10px;
+			padding: 0;
+			font-weight: 600;
+			padding: 0 10px;
+		}
+		
+			#legal p {
+				padding: 0;
+				margin: 0;
+				float: left;
+			}
+			
+			#legal a#churchthemer {
+/* 				background: transparent url(images/minimal/churchthemer.png) no-repeat 0 0; */
+				float: right;
+				overflow: hidden;
+				text-indent: -9999px;
+				display: block;
+				height: 27px;
+				padding-top: 0px;
+				width: 30px;
+				margin-top: 9px;
+			}
+
+
+
+
+/* Misc
+------------------------------------------------------- */	
+
+div.hr{
+	clear: both;
+	}
+	
+div.hr hr{
+		display: none;
+	}
+	
+.wp-post-image {
+	margin-bottom:20px;
+}
+	
+.scrollable .items {
+	width: 20000em;
+	position: absolute;
+	
+	/* hide the items initially, to be revealed with jQuery */
+	display: none;
+}
+	
+.aside ul ul {
+	padding-left:17px;	
+	width:203px ;
+}
+	
+#nav_sub .aside .menu-main-navigation-container{
+	margin:0px;
+	padding:0px;
+	width:220px;
+	border-width:0px;
+}
+#nav_sub .aside .sub-menu{
+	display:none;
+}
+
+blockquote, q {
+    background: none repeat scroll 0 0 transparent;
+    border-bottom: 3px solid #555555;
+    border-top: 3px solid #555555;
+    color: #555555;
+    float: left;
+    font-family: Georgia,Arial,Serif;
+    font-size: 1.25em;
+    margin: 1em;
+    padding: 1em;
+    width: 150px;
+}
+
+.article_content ul {
+    list-style: square inside none;
+    margin: 0 0 18px 1.5em;
+}
+
+.article_content ul li, .article_content ol li{
+	font-size:13px;
+}
+
+.article_content p, .article_content  ul, .article_content  ol, .article_content  dd, .article_content pre, .article_content  hr {
+    margin-bottom: 24px;
+}
+
+.article_content ol {
+    list-style: decimal outside none;
+    margin: 0 0 18px 1.5em;
+}
+
+.article_content p, .article_content  ul, .article_content  ol, .article_content  dd, .article_content  pre, .article_content  hr {
+    margin-bottom: 24px;
+}
+
+.podcast {
+    background: url("images/ico-03.gif") no-repeat scroll 100% 0 transparent;
+    float: right;
+    font-family: Georgia,'Times New Roman',Times,serif;
+    font-size: 14px;
+    margin: 8px 0 0 50px;
+    padding: 4px 40px 20px 0;
+}
+	
+.alignleft{
+	float:left;
+	margin:12px 12px 12px 0px;
+}
+.alignright{
+	float:right;
+	margin:12px 0px 12px 12px;
+}
+	
+.gallery {
+margin: auto;
+}
+.gallery .gallery-item {
+float: left;
+margin-top: 10px;
+text-align: center;
+width: 33%;
+}
+.gallery .gallery-caption {
+margin-left: 0;
+margin-top: 0px;
+}
+.gallery dl {
+margin: 0;
+}
+.gallery-caption {
+color: #888;
+font-size: 12px;
+margin:-24px 0 24px 0;
+}
+.gallery br+br {
+display: none;
+}
+#menu-footer-menu-1{
+	margin-left:0px;	
+	padding-left:0px;
+	width:170px;
+}
+#legal a#churchthemer { background: transparent url(images/mint-themes-icon-gray.png) no-repeat 0 0; }
+
+/* ul in pages */
+.page_content ul, .page_content ol {
+list-style: square inside none;
+margin: 0 0 18px 1.5em; 
+}
+

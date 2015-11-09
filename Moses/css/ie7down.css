@@ -1,0 +1,15 @@
+.news_strip {
+	font-size: 13px;
+}
+
+.highlights a.highlight:first-child {
+	margin-left: 20px;
+}
+
+#legal {
+	border-bottom: 1px solid transparent;
+}
+
+#section_supplemental .module {
+	margin-bottom: 0px;
+}

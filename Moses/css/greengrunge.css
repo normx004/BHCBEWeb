@@ -1,0 +1,292 @@
+/****************************************
+/******* GREEN GRUNGE *******************
+/****************************************
+
+/* Text Colors
+------------------------------------------------------- */
+body,
+#nav ul li a,
+#nav_sub ul li a,
+#supplemental_details p a,
+#footer a,
+.page_content a   {
+	color: #374530;
+}
+
+
+/* Main Images
+------------------------------------------------------- */
+
+body { background: #dbdbc9 url(images/greengrunge/background.jpg) repeat center top;}
+
+#site_info_wrap { background: #394e30 url(images/greengrunge/site_info_wrap_bg.jpg) repeat center top; }
+#header_wrap { background: #6d924f url(images/greengrunge/header_wrap_bg.jpg) repeat-x center top; }
+
+#page_wrapper_outer { background: transparent url(images/greengrunge/page_wrapper_top.jpg) repeat-x 0 0; }
+
+
+#header h1#branding a {}
+.current_page_item { background: #e3e3e3; }
+
+.comments ul li .comment_wrap .comment { background: transparent url(images/greengrunge/comment_body_repeat-y.png) repeat-y 0 0; }
+#site_map {	background: transparent url(images/greengrunge/divider.png) repeat-x 0 100%; }
+#legal { background: transparent url(images/greengrunge/divider.png) repeat-x left bottom; }
+
+
+
+
+/* Main Sprite */
+#site_info span.location span.icon,
+#site_info span.time span.icon,
+.comments input[type="submit"].submitcomment,
+.navi a,
+#downloadlatestsermon,
+#followusontwitter,
+a.readall,
+a.readmore,
+a.viewall,
+a.viewmore,
+a.download,
+#supplemental_details a.twitter,
+#supplemental_details a.facebook,
+#supplemental_details a.flickr,
+#supplemental_details p a.emailupdates span.icon,
+#supplemental_details p a.inviteafriend span.icon {
+	background-image: url(images/greengrunge/misc-sprite.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+}
+
+				#supplemental_details a.twitter {
+					
+					background: transparent url(images/greengrunge/twitter-green-grunge.png) no-repeat 0 0; */
+				}
+				
+				#supplemental_details a.facebook {
+					
+					background: transparent url(images/greengrunge/facebook-green-grunge.png) no-repeat 0 0; */
+				}
+				#supplemental_details a.youtube {
+				
+					background: transparent url(images/greengrunge/youtube-green-grunge.png) no-repeat 0 0; */
+				}
+				#supplemental_details a.vimeo {
+					
+					background: transparent url(images/greengrunge/vimeo-green-grunge.png) no-repeat 0 0; */
+				}
+				#supplemental_details a.pinterest {
+					
+					background: transparent url(images/greengrunge/pinterest-green-grunge.png) no-repeat 0 0; */
+				}
+				
+	#site_info span.location span.icon { background-position: 0 0; }
+	#site_info span.time span.icon { background-position: -25px 0; }
+	.comments input[type="submit"].submitcomment { background-position: -720px -25px; }
+	.navi a { background-position: -75px 0; }
+	#downloadlatestsermon { background-position: -100px 0; }
+	#followusontwitter { background-position: -325px 0; }
+	#supplemental_details p a.emailupdates span.icon { background-position: -215px -41px; }
+	#supplemental_details p a.inviteafriend span.icon { background-position: -243px -41px; }
+
+
+
+
+/* Form Sprite */
+.comments ul li .comment_wrap,
+.comments ul li .comment_bottom,
+.comments ul li.admin .comment_wrap .comment .avatar,
+#section_main .page_content p.field_text, p.comment-form-author, p.comment-form-email, p.comment-form-url, p.comment-form-comment,
+div.field_message,
+#search p.text_field, #search_widget p.text_field,
+#search input[type="submit"], #search_widget input[type="submit"] {
+	background-image: url(images/greengrunge/form-sprite.png);
+	background-color: transparent;
+	background-repeat: no-repeat;
+}
+	.comments ul li .comment_wrap { background-position: 0 0; }
+	.comments ul li .comment_bottom { background-position: 0 -89px; }
+	.comments ul li.admin .comment_wrap .comment .avatar { background-position: -19px -137px; }
+	#section_main .page_content p.field_text,  p.comment-form-author { background-position: 0 -240px; }
+	div.field_message, p.comment-form-comment { background-position: -240px -240px; }
+	#search p.text_field, #search_widget p.text_field { background-position: 0 -360px; }
+	#search input[type="submit"], #search_widget input[type="submit"] { background-position: -185px -360px; }
+
+
+
+
+/* Other Theme Styles
+------------------------------------------------------- */
+
+#site_info_wrap, .location a {
+	color: #d8d9c7;
+	text-shadow: #000 0px 1px 1px;
+}
+
+
+#header h2 {
+	text-shadow: #bee495 0px 1px 1px;
+}
+
+	#nav ul li {
+		margin-right: 0;
+	}
+	
+		#nav > .menu-header >  ul > li, #nav > .home-button >  ul > li {
+			background: #dbdbc8 url(images/greengrunge/nav.jpg) repeat 0 0;
+			border-left: 1px solid #edede1;
+			border-right: 1px solid #c1c2a9;
+			width: 162px;
+		}
+		#nav > .home-button >  ul > li:first-child  {
+				width: 158px; /* make the first slightly longer to even total nav width to 980 wide */
+				border-left: none;
+		}
+		
+		#nav > .menu-header > ul > .current-menu-item > a, #nav > .home-button > ul > .current_page_item > a{
+				background: #ddd8b4 url(images/greengrunge/nav_active.jpg) repeat center top;
+			}
+		#nav > .menu-header >  ul > li > a:hover, #nav > .home-button >  ul > li > a:hover  {
+			background-color:#d0cfb7;
+		}
+		
+				
+		/*drop down */
+		#nav > .menu-header > ul > li > ul > li > a{
+			color:#494949;
+			text-decoration:none;
+			display: block;
+			width: 15em;
+			padding: .8em 1em;
+			border-bottom: 1px solid #CBC8B1;
+			background: #f8f8f6 url(images/greengrunge/paper_texture.jpg) repeat center center;
+		}
+		#nav > .menu-header > ul > li > ul li a{
+			color:#494949;
+			text-decoration:none;
+			width: 15em;
+			padding: .8em 1em;
+			border-bottom: 1px solid #CBC8B1;
+			background: #f8f8f6 url(images/greengrunge/paper_texture.jpg) repeat center center;
+		}
+
+		#nav > .menu-header > ul > li > ul > li a:hover{
+			background: #d5d0b7 url(images/greengrunge/brown_header_paper.jpg) repeat center center;
+		}
+
+		#nav > .menu-header > ul > li > ul > li > a:hover{
+			background-color: #f2f2f2;
+			opacity: 1;
+		} 
+	
+	
+
+#section_main,
+#section_supplemental .module .content,
+#supplemental_details,
+.navi {
+	background: #f8f8f6 url(images/greengrunge/paper_texture.jpg) repeat center center;
+}
+
+#section_main.inner_page {
+	background: #f4f4e9 url(images/greengrunge/paper_texture_inner_top.jpg) repeat-x 0 0;
+}
+
+
+.news_strip,
+#section_supplemental .module .header {
+	background: #d5d0b7 url(images/greengrunge/brown_header_paper.jpg) repeat center center;
+}
+
+
+.navi_wrap {		
+	border-top: 1px solid #cbc8b1;
+}
+
+
+/* Blog List
+------------------------------------------------------- */
+#bloglist thead th {
+	background: #d5d0b7 url(images/grunge/brown_header_paper.jpg) repeat center center;
+	color: #374530;
+}
+
+#bloglist tbody td {
+	border-bottom: 1px solid #CBC8B1;
+}
+		
+
+
+/* Aside Modules
+------------------------------------------------------- */
+
+
+.aside .module {
+	width: 220px;
+	float: left;
+	margin: 20px 0 0 0;
+}
+
+
+	.aside h3 {
+		background: #d5d0b7 url(images/greengrunge/brown_header_paper.jpg) repeat center center;
+		border-bottom: none;
+		float: left;
+		width: 180px;
+		padding: 10px 20px;
+		font-size: 18px;
+		text-shadow: #FFF 0px 1px 1px;
+		font-weight: 500;
+		float: left;
+		font-family: "MuseoSans500";
+	}
+		
+	
+	/* content */
+	
+	/* content below sidebar title in sidebar */
+	.aside div {
+		background: #f8f8f6 url(images/greengrunge/paper_texture.jpg) repeat center center;
+		border: 1px solid #d4d2bb;
+		padding: 9px 19px;
+		float: left;
+		width: 180px;
+		font-size: 12px;
+		font-family: "Helvetica Neue", Helvetica, Geneva, Arial, Verdana, sans-serif;
+		line-height: 18px;
+		text-shadow: #FFF 0px 1px 1px;
+		margin-bottom:20px;
+	}
+	/* Lists in sidebar */
+	.aside  ul  ul {
+		background: #f8f8f6 url(images/greengrunge/paper_texture.jpg) repeat center center;
+		border: 1px solid #d4d2bb;
+		float: left;
+		width: 201px;
+		font-size: 12px;
+		font-family: "Helvetica Neue", Helvetica, Geneva, Arial, Verdana, sans-serif;
+		line-height: 18px;
+		text-shadow: #FFF 0px 1px 1px;
+		margin-bottom:20px;
+	}
+	
+		.aside .content h2 {
+			font-size: 18px;
+			font-weight: 400;
+		}
+		
+		.aside .content h4 {
+			font-size: 12px;
+			font-weight: 400;
+			margin-bottom: 10px;
+		}
+		
+		.aside p { line-height: 18px; margin-bottom: 10px; }
+		
+		.aside a.download { float: right; }
+		
+
+
+
+
+
+
