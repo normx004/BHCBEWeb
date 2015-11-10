@@ -6,7 +6,7 @@ if (!function_exists('of_options')) {
 function of_options(){
    
 // VARIABLES
-$themename = get_theme_data(STYLESHEETPATH . '/style.css');
+$themename = wp_get_theme(STYLESHEETPATH . '/style.css');
 $themename = $themename['Name'];
 $shortname = "cap";
 
