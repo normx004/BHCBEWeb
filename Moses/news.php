@@ -97,6 +97,6 @@ get_header(); ?>
 					
 						
 					
-				</div> <!-- end #section_main --> 
+				</div> <!-- end of #section_main --> 
            
 <?php get_footer(); ?>
